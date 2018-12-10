@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
+import { Router, Route, browserHistory } from 'react-router'
 import logo from './logo.svg';
+import SearchScreen from './SearchScreen.js'; 
+import Login from './Login.js'; 
+ 
 import './App.css';
-
+const LoginScreen = () => (
+	<Login />
+  );
+const SearchPageScreen = () => (
+	<SearchScreen/>
+  );
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router history={browserHistory}>
+        <div className="App">
+          <Route path='/' component={LoginScreen} />
+          < Route path='/SearchScreen' component={SearchPageScreen}  />
+        </div>
+      </Router>
     );
   }
 }
