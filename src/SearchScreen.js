@@ -69,15 +69,15 @@ class SearchScreen extends React.Component {
       );
     });
 
-    Popup.alert(<div><li><b>Name           </b> {array[0].name}</li> 
+    Popup.alert(<div><li><b>Name     -</b> {array[0].name}</li> 
     <li><b>Rotation_period</b> {array[0].rotation_period}
-    </li> <li><b>Diameter       </b> {array[0].diameter}</li>
-     <li><b>Climate        </b> {array[0].climate}</li>
-     <li><b>Gravity        </b> {array[0].gravity}</li>
-     <li><b>Terrain        </b> {array[0].terrain}</li>
-     <li><b>Surface_water  </b> {array[0].surface_water}</li>
-     <li><b>Population     </b> {array[0].population}</li>
-    </div>, 'Planet Detail');
+    </li> <li><b>Diameter    -</b> {array[0].diameter}</li>
+     <li><b>Climate    -</b> {array[0].climate}</li>
+     <li><b>Gravity    -</b> {array[0].gravity}</li>
+     <li><b>Terrain    -</b> {array[0].terrain}</li>
+     <li><b>Surface_water-</b> {array[0].surface_water}</li>
+     <li><b>Population    -</b> {array[0].population}</li>
+    </div>);
     //alert(array[0])
   };
   render() {
