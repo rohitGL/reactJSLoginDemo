@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 import SearchScreen from './SearchScreen.js'; 
 import {Route, browserHistory} from 'react-router';
 
@@ -27,8 +25,9 @@ handlePassword(text) {
     this.setState({password: text.target.value})
 }
 componentWillMount() {
-  localStorage.removeItem("username")
+ // localStorage.removeItem("username")
   if (localStorage.getItem('username')) {
+
      browserHistory.push('/Searchscreen')
   }
 }
