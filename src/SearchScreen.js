@@ -78,7 +78,7 @@ class SearchScreen extends React.Component {
   }
   handleInputChange = e => {
     this.abortController.abort();
-    document.getElementById("LoadMore").style.display = "none";
+   
     if (localStorage.getItem('SearchCount')){
       this.state.searchCount = parseInt(localStorage.getItem('SearchCount'))
     }
@@ -105,13 +105,14 @@ class SearchScreen extends React.Component {
          }
       }
     }
+    document.getElementById("LoadMore").style.display = "none";
     this.state.planets = []
     this.state.nextUrl = "https://swapi.co/api/planets/?search=" + e.target.value
     this.state.searchTxt = e.target.value
     this.getPlanetList()
   };
   componentDidMount() {
-    //this.getPlanetList();
+    this.getPlanetList();
   }
   logoutUser() {
     localStorage.removeItem('LimitExceeded');
@@ -154,7 +155,7 @@ class SearchScreen extends React.Component {
   render() {
     return (
       <div class="mainView">
-        <Popup />
+        <Popup/>
         <header class="header_Cont">
           <h1 class="headrTitle"> WELCOME, {localStorage.getItem("username").toUpperCase()} <a onClick={this.logoutUser} class="logout">LOGOUT</a></h1>
         </header>
@@ -221,10 +222,3 @@ class SearchScreen extends React.Component {
 }
 
 export default SearchScreen;
-const myDivStyle = {
-  width: '200px',
-  height: '50px',
-  border: '5px solid white',
-  backgroundColor: 'red',
-  textalign: 'left',
-}
